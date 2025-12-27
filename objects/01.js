@@ -25,3 +25,4 @@ person.greeting = function() {
     console.log("Hello, " + this.name);
 }
 console.log(person.greeting()); // Hello, John
+ 
