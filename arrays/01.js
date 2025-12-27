@@ -27,4 +27,4 @@ console.log(arr);
 arr.splice(2, 0, 10); //add element 10 at index 2
 console.log(arr);
 arr.splice(2, 1, 20); //replace 1 element at index 2 with 20
-console.log(arr);   
+console.log(arr.join()); //convert array to string   
