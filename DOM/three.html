@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur coffee</title>
+</head>
+<body style="background-color: red;" color="white">
+    
+</body>
+<script>
+    const h1 = document.createElement('h1');
+    console.log(h1);
+    h1.className = 'heading';
+    h1.id = Math.round(Math.random()*10 +1);
+    h1.setAttribute('title', 'this is heading');
+    h1.style.backgroundColor = 'blue';
+    h1.style.color = 'white';
+    h1.style.padding = '10px';
+    // h1.innerText = 'chai aur coffee';
+    const textNode = document.createTextNode('chai aur coffee');
+    h1.appendChild(textNode);
+    document.body.appendChild(h1);
+</script>
+</html>
