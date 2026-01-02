@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishnu the king, the god</title>
+</head>
+<body style ="background-color: black; color: white;">
+    <ul class="language">
+        <li>Vishnu</li>
+        <li>Shiva</li>
+        <li>Brahma</li>
+        <li>Krishna</li>
+        <li>Rama</li>
+</body>
+<script>
+    function addLanguage(language) {
+        const li = document.createElement('li');
+        li.innerText = `${language}`; // here the traversing is not optimum the tree is whole traversed again and again
+        document.querySelector('.language').appendChild(li);
+
+
+    }
+    function addOptimumLanguage(language){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(language));
+        document.querySelector('.language').appendChild(li);
+    } // this is the optimum way to add text node to an element
+    addLanguage('mahadev')
+    addLanguage('ganesh')
+    addOptimumLanguage('Hanuman')
+    // edit
+    const first = document.querySelector("li:nth-child(2)")
+    console.log(first);
+    // first.innerHTML = 'Edited Shiva';
+    // const newfirst = document.createElement('li');
+    // newfirst.textContent = 'Indra';
+    // first.replaceWith(newfirst);
+    // use outer/html to replace the whole element
+    // first.outerHTML = '<li>Edited Shiva</li>';
+    //delete
+    const third = document.querySelector("li:nth-child(3)");
+    console.log(third);
+    third.remove();
+    </script> 
+</html>
