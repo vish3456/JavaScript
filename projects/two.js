@@ -12,7 +12,7 @@ form.addEventListener('click',(e)=>{
     }
     else{
         const bmi = (w/(h*h)).toFixed(2);
-        return result.innerHTML = `Your BMI is ${bmi}`;
-        
+        return result.innerHTML = `<span>Your BMI is ${bmi}</span>`;
+
     }
 })
