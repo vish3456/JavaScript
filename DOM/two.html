@@ -14,21 +14,22 @@
     </div>
 </body>
 <script>
-const p = document.querySelector('.parent');
-console.log(p);
-console.log(p.children);
-console.log(p.children[2].innerHTML);
+const p = document.querySelector('.parent'); // it returns the first matching element as per the selector and if no element found it returns null
+console.log(p);// entire div with class parent
+console.log(p.children); // HTMLCollection of all the children elements
+console.log(p.children[2].innerHTML); // Wednesday
 // for(let i=0; i<p.children.length; i++){
 //     console.log(p.children[i].innerHTML);
 // }
 p.children[1].style.backgroundColor = 'green';
-console.log(p.firstElementChild);
-console.log(p.lastElementChild);
+console.log(p.firstElementChild); // first child element  
+console.log(p.lastElementChild); // last child element
 const dayOne = document.querySelector('.day');
-// console.log(dayOne.nextElementSibling);
-// console.log(dayOne.nextElementSibling.nextElementSibling);
-// console.log(dayOne.nextElementSibling.nextElementSibling.previousElementSibling);
+// console.log(dayOne.nextElementSibling); // Tuesday
+// console.log(dayOne.previousElementSibling); // null      
+// console.log(dayOne.nextElementSibling.nextElementSibling); // Wednesday
+// console.log(dayOne.nextElementSibling.nextElementSibling.previousElementSibling); // Tuesday
 // console.log(dayOne.parentElement);
-console.log("NODES: " , p.childNodes);
-</script>
+console.log("NODES: " , p.childNodes); // it returns all the child nodes including text nodes like spaces and line breaks
+</script>  
 </html>

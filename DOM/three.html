@@ -9,17 +9,17 @@
     
 </body>
 <script>
-    const h1 = document.createElement('h1');
-    console.log(h1);
-    h1.className = 'heading';
-    h1.id = Math.round(Math.random()*10 +1);
-    h1.setAttribute('title', 'this is heading');
-    h1.style.backgroundColor = 'blue';
-    h1.style.color = 'white';
-    h1.style.padding = '10px';
+    const h1 = document.createElement('h1'); // creating an element named h1
+    console.log(h1); // <h1></h1>
+    h1.className = 'heading'; // adding class to the created h1 element
+    h1.id = Math.round(Math.random()*10 +1); // adding id to the created h1 element
+    h1.setAttribute('title', 'this is heading'); // setting attribute to the created h1 element
+    h1.style.backgroundColor = 'blue'; // adding style to the created h1 element
+    h1.style.color = 'white'; // adding style to the created h1 element
+    h1.style.padding = '10px'; // adding style to the created h1 element
     // h1.innerText = 'chai aur coffee';
-    const textNode = document.createTextNode('chai aur coffee');
-    h1.appendChild(textNode);
-    document.body.appendChild(h1);
+    const textNode = document.createTextNode('chai aur coffee'); // creating a text node    
+    h1.appendChild(textNode); // appending text node to the created h1 element
+    document.body.appendChild(h1); // appending the created h1 element to the body
 </script>
 </html>
