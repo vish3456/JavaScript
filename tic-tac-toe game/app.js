@@ -5,7 +5,8 @@ const msg = document.querySelector('.msg');
 const winnerMessage = document.querySelector('#message');
 
 let turnO = true;
-let count = 1;
+let count = 0; // number of moves
+
 const winningCombos = [
   [0, 1, 2],
   [3, 4, 5],
@@ -27,15 +28,20 @@ boxes.forEach((box) => {
       box.innerText = 'X';
       box.style.color = 'blue';
       turnO = true;
-    } 
-    count++;
+    }
+
     box.disabled = true;
-    checkWin();
+    count++;
+
+    if (!checkWin() && count === 9) {
+      showDraw();
+    }
   });
 });
 
 const resetGame = () => {
   turnO = true;
+  count = 0;
   enableBoxes();
   msg.classList.add('hide');
 };
@@ -43,6 +49,7 @@ const resetGame = () => {
 function enableBoxes() {
   boxes.forEach((box) => {
     box.innerText = '';
+    box.style.color = '';
     box.disabled = false;
   });
 }
@@ -54,15 +61,13 @@ function disableBoxes() {
 }
 
 function showWinner(winner) {
-    if(count>9){
-        winnerMessage.innerText = `It's a Draw!`;
-        msg.classList.remove('hide');
-        return;
-    }else{
   winnerMessage.innerText = `Player ${winner} has won the game!`;
   msg.classList.remove('hide');
-  return;
 }
+
+function showDraw() {
+  winnerMessage.innerText = `It's a Draw!`;
+  msg.classList.remove('hide');
 }
 
 function checkWin() {
@@ -74,9 +79,10 @@ function checkWin() {
     if (pos1 !== '' && pos1 === pos2 && pos2 === pos3) {
       disableBoxes();
       showWinner(pos1);
-      return;
+      return true; // winner found
     }
   }
+  return false; // no winner yet
 }
 
 newGameButton.addEventListener('click', resetGame);
